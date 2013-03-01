@@ -3,7 +3,27 @@ class Dduummyy < Padrino::Application
   register Padrino::Mailer
   register Padrino::Helpers
 
+  require 'json'
+  require 'hiroshimarb/member'
+
   enable :sessions
+
+  class ::Hiroshimarb::Member
+    def to_h
+      {
+        name: name,
+        github: github,
+        twitter: twitter,
+        website: website,
+        profile: profile,
+      }
+    end
+  end
+
+  get 'hiroshimarb/member.json' do
+    content_type :json
+    ::Hiroshimarb::Member.all.map { |m| m.to_h }.to_json
+  end
 
   ##
   # Caching support
