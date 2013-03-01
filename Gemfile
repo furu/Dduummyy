@@ -30,3 +30,5 @@ gem 'padrino', '0.10.7'
 
 gem 'pry'
 gem 'awesome_print'
+
+gem 'hiroshimarb'
