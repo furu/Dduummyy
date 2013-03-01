@@ -25,6 +25,10 @@ class Dduummyy < Padrino::Application
     ::Hiroshimarb::Member.all.map { |m| m.to_h }.to_json
   end
 
+  get :index do
+    render :index
+  end
+
   ##
   # Caching support
   #
