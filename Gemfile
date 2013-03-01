@@ -27,3 +27,6 @@ gem 'padrino', '0.10.7'
 # %w(core gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.10.7'
 # end
+
+gem 'pry'
+gem 'awesome_print'
