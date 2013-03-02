@@ -22,7 +22,7 @@ class Dduummyy < Padrino::Application
 
   get 'hiroshimarb/member.json' do
     content_type :json
-    ::Hiroshimarb::Member.all.map { |m| m.to_h }.to_json
+    ::Hiroshimarb::Member.all.map(&:to_h).to_json
   end
 
   get :index do
